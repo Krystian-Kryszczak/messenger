@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: messenger
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: ${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}
+cassandra:
+  default:
+    clusterName: '"myCluster"'
+    contactPoint: '"localhost"'
+    port: 9042
+    maxSchemaAgreementWaitSeconds: 20
+    ssl: true
